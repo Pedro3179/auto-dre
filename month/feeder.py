@@ -11,7 +11,7 @@ df_expenses=pd.read_excel(
 )
 
 df_dre_expenses=pd.read_excel(
-    'DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE DESPESAS'
+    '../DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE DESPESAS'
 )
 
 df_total_expenses=pd.concat([df_dre_expenses, df_expenses], axis=0)
@@ -22,14 +22,14 @@ df_revenue=pd.read_excel(
 )
 
 df_dre_revenue=pd.read_excel(
-    'DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE RECEITAS'
+    '../DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE RECEITAS'
 )
 
 df_total_revenue=pd.concat([df_dre_revenue, df_revenue])
 
 #Writing changes to DRE DEMONSTRATIVO
 with pd.ExcelWriter(
-    'DRE - DEMONSTRATIVO DE RESULTADO.xlsx',
+    '../DRE - DEMONSTRATIVO DE RESULTADO.xlsx',
     engine='openpyxl',
     mode='a',
     if_sheet_exists='replace'
@@ -42,11 +42,11 @@ with pd.ExcelWriter(
     )
 
 expenses_total=pd.read_excel(
-    'DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE DESPESAS'
+    '../DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE DESPESAS'
 )
 
 revenue_total=pd.read_excel(
-    'DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE RECEITAS'
+    '../DRE - DEMONSTRATIVO DE RESULTADO.xlsx', sheet_name='DRE RECEITAS'
 )
 
 # Dump the resulting tabular data

@@ -21,8 +21,22 @@ with pd.ExcelWriter(						# File Handle to write on the file.
 ) as writer:
     df_expenses.to_excel(writer, sheet_name='RESUMO DESPESAS', index=False)
     df_revenue.to_excel(writer, sheet_name='RESUMO RECEITAS', index=False)
-#print(df_expenses.head(), '\n')
-#print(df_expenses.dtypes, '\n')
-#print(df_expenses.shape)
+
+month_valE=pd.read_excel(
+	'CONTROLE DIÁRIO - teste.xlsx', sheet_name='RESUMO DESPESAS'
+)
+
+month_valR=pd.read_excel(
+    'CONTROLE DIÁRIO - teste.xlsx', sheet_name='RESUMO RECEITAS'                         
+)
+
+month_in_exp=month_valE['MES']
+month_in_rev=month_valR['MES']
+
+# Dump
+
+print(f'Content of column month in RESUMO DESPESAS: {month_in_exp}\n')
+print(f'Content of column month in RESUMO RECEITAS: {month_in_exp}\n')
+   
 
 
