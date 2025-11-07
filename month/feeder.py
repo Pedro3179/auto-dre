@@ -1,9 +1,10 @@
 
 import pandas as pd
+from auto_dre import file_name
 
 # Add expenses to the DRE DESPESAS table.
 df_expenses=pd.read_excel(
-	'CONTROLE DIÁRIO - teste.xlsx', sheet_name='RESUMO DESPESAS'
+	file_name, sheet_name='RESUMO DESPESAS'
 )
 
 df_dre_expenses=pd.read_excel(
@@ -14,7 +15,7 @@ df_total_expenses=pd.concat([df_dre_expenses, df_expenses], axis=0)
 
 # Add revenue to the DRE RECEITAS table.
 df_revenue=pd.read_excel(
-    'CONTROLE DIÁRIO - teste.xlsx', sheet_name='RESUMO RECEITAS'                         
+    file_name, sheet_name='RESUMO RECEITAS'                         
 )
 
 df_dre_revenue=pd.read_excel(
